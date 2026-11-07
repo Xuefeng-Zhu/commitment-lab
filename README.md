@@ -30,6 +30,18 @@ Switch connects these participants in one shared room. The mentor's contribution
 
 Switch's examples indicate that an agent usually responds when explicitly addressed; a normal room message supplies context but does not necessarily wake it. Use the created names rather than generic role labels, and check the agent's session if it does not respond. Agents starting late need to read earlier messages from the room, which is why the instructions ask them to use `read_context` and handle truncated history. Agent and channel behavior depends on the installed Switch version and bridge.
 
+### Using an existing server on a VM
+
+For a server bound to the VM's loopback, connect through SSH rather than exposing the services to the internet. First independently verify the VM's current public IP and SSH host key, then use a trusted known-host entry and your own SSH identity. For example, if the existing server really uses VM ports 8000 (API), 3000 (gateway), and 8065 (Mattermost), the following creates separate local forwards; adjust the ports to the actual deployment:
+
+```sh
+ssh -N -L 127.0.0.1:38001:127.0.0.1:8000 \
+  -L 127.0.0.1:33000:127.0.0.1:3000 \
+  -L 127.0.0.1:38065:127.0.0.1:8065 USER@VERIFIED_PUBLIC_IP
+```
+
+Keep the tunnel running while using it. Add or select the existing server in Console using the API address `http://127.0.0.1:38001` and sign in with that server's account; older Console/server combinations may ask separately for the gateway address. The tunnel is for the machine running it: a remote mentor needs access to a shared messaging bridge through their own authorized connection, such as a properly configured Discord or Slack bridge, or their own secure tunnel. Do not assume a localhost Mattermost URL is accessible to them.
+
 ## Run a round
 
 Names below assume the default `commitment` prefix; replace them if you chose a different prefix. The fictional situation and the mentor's sample constraints are in [`lab/scenario.md`](lab/scenario.md).
