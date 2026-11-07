@@ -30,7 +30,7 @@ Switch connects these participants in one shared room. The mentor's contribution
 
 Switch's examples indicate that an agent usually responds when explicitly addressed; a normal room message supplies context but does not necessarily wake it. Use the created names rather than generic role labels, and check the agent's session if it does not respond. Agents starting late need to read earlier messages from the room, which is why the instructions ask them to use `read_context` and handle truncated history. Agent and channel behavior depends on the installed Switch version and bridge.
 
-The recorded live test used one operator playing both human roles. A separate mentor joining through Mattermost has not yet been verified. On the tested server, private Switch room metadata is owner/admin-only; inviting a non-admin to a private Mattermost channel does not establish their Switch Console or metadata access. Verify both the mentor's channel participation and any required Switch permissions for your deployment.
+The recorded live test used one operator playing both human roles. A separate mentor joining through Mattermost has not yet been verified. On the tested server, private Switch room metadata is owner/admin-only; inviting a non-admin to a private Mattermost channel does not establish their Switch Console or metadata access. The tested bridge also ignores messages from its configured Mattermost admin account, so use a different chat identity as mentor. Verify both the mentor's channel participation and any required Switch permissions for your deployment.
 
 ### Using an existing server on a VM
 
