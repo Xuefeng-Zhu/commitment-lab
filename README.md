@@ -15,7 +15,7 @@ Switch connects these participants in one shared room. The mentor's contribution
 
 ## Requirements
 
-- [Switch Console](https://github.com/sandbox-quantum/switch) and a working Switch server, either local or on a remote host. A local server uses Docker and can provide a Mattermost bridge. See the [official quickstart](https://docs.switchagents.ai/), [remote-host setup](https://docs.switchagents.ai/flintai/switch/deploy/host-remotely), and [hackathon resources](https://www.wemakedevs.org/hackathons/switch/resources).
+- [Switch Console](https://github.com/sandbox-quantum/switch) and a working Switch server, either local or on a remote host. Current Console versions can run a local core server without Docker; Docker is needed for its optional bundled Mattermost, and other versions may differ. See the [official quickstart](https://docs.switchagents.ai/), [remote-host setup](https://docs.switchagents.ai/flintai/switch/deploy/host-remotely), and [hackathon resources](https://www.wemakedevs.org/hackathons/switch/resources).
 - An installed, authenticated supported agent provider, such as Codex, Claude Code, or OpenCode. Any provider subscription or API costs are yours.
 - A chat bridge configured in Switch and a learner account. For a real mentor, the mentor must also be able to join the chosen room/channel. `{$creator}` in the template adds only the creator.
 - Python 3 only if you want to change the instructions and regenerate the template. The ready-to-import template needs no project dependencies.
@@ -29,6 +29,8 @@ Switch connects these participants in one shared room. The mentor's contribution
 5. Confirm the agents are online and addressable. The template uses `addressing: anyone` so room members and the other agent can address them; use it only in a room whose participants you trust. This setting is not a general guarantee of private data isolation or enforced approvals.
 
 Switch's examples indicate that an agent usually responds when explicitly addressed; a normal room message supplies context but does not necessarily wake it. Use the created names rather than generic role labels, and check the agent's session if it does not respond. Agents starting late need to read earlier messages from the room, which is why the instructions ask them to use `read_context` and handle truncated history. Agent and channel behavior depends on the installed Switch version and bridge.
+
+The recorded live test used one operator playing both human roles. A separate mentor joining through Mattermost has not yet been verified. On the tested server, private Switch room metadata is owner/admin-only; inviting a non-admin to a private Mattermost channel does not establish their Switch Console or metadata access. Verify both the mentor's channel participation and any required Switch permissions for your deployment.
 
 ### Using an existing server on a VM
 
@@ -68,6 +70,7 @@ Check that the stakeholder acknowledges the new constraint, the plan and debrief
 - [`lab/scenario.md`](lab/scenario.md): fictional scenario and suggested mentor constraints.
 - [`lab/stakeholder-instructions.md`](lab/stakeholder-instructions.md) and [`lab/coach-instructions.md`](lab/coach-instructions.md): editable agent instructions.
 - [`lab/debrief-template.md`](lab/debrief-template.md): example output format for humans; the coach's embedded instructions specify the required sections.
+- [`evidence/round-a-transcript.md`](evidence/round-a-transcript.md): a fictional live test transcript with its single-operator role-play and observed attribution error explicitly identified.
 - [`scripts/build_template.py`](scripts/build_template.py): rebuilds the importable template from the editable instructions.
 
 After changing either agent instruction file, run:
