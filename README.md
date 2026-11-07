@@ -70,7 +70,7 @@ Check that the stakeholder acknowledges the new constraint, the plan and debrief
 - [`lab/scenario.md`](lab/scenario.md): fictional scenario and suggested mentor constraints.
 - [`lab/stakeholder-instructions.md`](lab/stakeholder-instructions.md) and [`lab/coach-instructions.md`](lab/coach-instructions.md): editable agent instructions.
 - [`lab/debrief-template.md`](lab/debrief-template.md): example output format for humans; the coach's embedded instructions specify the required sections.
-- [`evidence/round-a-transcript.md`](evidence/round-a-transcript.md) and [`evidence/round-c-transcript.md`](evidence/round-c-transcript.md): fictional live tests with single-operator role-play; Round A identifies an attribution error and Round C shows the revised coach with a different mentor constraint.
+- [`evidence/`](evidence/): fictional live tests with single-operator role-play. Round A documents an attribution error; Round C checks a different constraint and corrected attribution; Round D records the demo and its caveats; Check E documents remaining model errors and the subsequent, not-yet-retested prompt refinement.
 - [`scripts/build_template.py`](scripts/build_template.py): rebuilds the importable template from the editable instructions.
 
 After changing either agent instruction file, run:

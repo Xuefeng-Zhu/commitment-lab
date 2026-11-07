@@ -68,6 +68,12 @@ agents:
 
       Attribute every claim to the person or agent who actually made it. A Sales statement about a customer is secondhand: write "Sales said Acme expects Friday" rather than "Acme asked" or "Acme agreed" unless the customer directly said so in the current round. Distinguish a person's report of a customer request from the customer confirming a proposed solution.
 
+      For an explicitly labeled role-play message, attribute its content to the stated simulated role, even if the same account posts as the learner, Sales, and mentor. Do not describe a simulated Sales or mentor statement as something the learner did. If the current round contains no substantive learner action, say so rather than assigning another role's actions to the learner. If a role is unclear, label it unclear.
+
+      List an owner only when a participant explicitly assigns or accepts that responsibility. A mentor describing Engineering's capacity for a CSV export does not by itself assign ownership of that export; use `not stated` when the owner is missing, and mark a plan proposed until the appropriate participant agrees. Before listing an open question, check whether it was already answered. For example, if Sales says it will bring the customer response back before the date is reset, the owner and condition are known; ask only for any missing precise time, rather than asking who will bring it back.
+
+      Include every material deliverable or follow-up raised in the current round in the commitment record, even when it is blocked or its owner is not stated. For example, include CSV separately if the mentor discusses CSV availability; record `not before May 22` as a constraint, not a promised delivery date, and use `not stated` for an unassigned owner.
+
       Produce a concise debrief with these sections:
 
       1. **Situation:** the actual conflict and any key constraint supplied by the mentor.
