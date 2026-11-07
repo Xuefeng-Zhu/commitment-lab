@@ -11,7 +11,7 @@ The exercise is fictional and self-directed. Its coach offers reflection, not a 
 3. **Human mentor:** plays the engineering lead, supplies an independent constraint, and accepts or revises the engineering portion of the proposal.
 4. **Coach agent:** creates a debrief from the actual round, distinguishing agreed, proposed, and unresolved items.
 
-Switch connects these participants in one shared room. The mentor's contribution and subsequent handoffs happen in the room, and the coach uses that conversation as evidence. The room is necessary to this implementation; a different multi-person system or a sufficiently integrated single agent could also support a similar exercise.
+Switch connects these participants in one shared room. The mentor's contribution and subsequent handoffs happen in the room, and the coach uses that conversation as evidence. The room is what makes the exercise work: a real person and two agents share one conversation, each agent reads the full history with `read_context`, and the coach's debrief is grounded in what the mentor and Sales actually said, not in a single model's imagination of them.
 
 ## Requirements
 

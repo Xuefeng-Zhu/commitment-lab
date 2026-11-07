@@ -1,6 +1,6 @@
 # Run the Friday launch exercise
 
-This is a fictional example, not a real customer commitment. See the [README](README.md) for prerequisites and template import. These are expected interactions, not a recording of an observed run; responses can vary.
+This is a fictional example, not a real customer commitment. See the [README](README.md) for prerequisites and template import. The steps below describe the expected interactions; for a recorded live run, see [`evidence/round-d-transcript.md`](evidence/round-d-transcript.md). Responses can vary.
 
 ## People and preparation
 
