@@ -15,20 +15,20 @@ Switch connects these participants in one shared room. The mentor's contribution
 
 ## Requirements
 
-- [Switch Console](https://github.com/sandbox-quantum/switch) and a working local Switch server. Console's local setup uses Docker and can provide a Mattermost bridge. See the [official quickstart](https://docs.switchagents.ai/) and [hackathon resources](https://www.wemakedevs.org/hackathons/switch/resources).
+- [Switch Console](https://github.com/sandbox-quantum/switch) and a working Switch server, either local or on a remote host. A local server uses Docker and can provide a Mattermost bridge. See the [official quickstart](https://docs.switchagents.ai/), [remote-host setup](https://docs.switchagents.ai/flintai/switch/deploy/host-remotely), and [hackathon resources](https://www.wemakedevs.org/hackathons/switch/resources).
 - An installed, authenticated supported agent provider, such as Codex, Claude Code, or OpenCode. Any provider subscription or API costs are yours.
 - A chat bridge configured in Switch and a learner account. For a real mentor, the mentor must also be able to join the chosen room/channel. `{$creator}` in the template adds only the creator.
 - Python 3 only if you want to change the instructions and regenerate the template. The ready-to-import template needs no project dependencies.
 
 ## Set up the lab
 
-1. Clone this repository. Start your Docker backend and Switch Console, start or connect to a Switch server, and ensure a messaging bridge and a signed-in provider are available. Follow the official quickstart for your installed Console version.
+1. Clone this repository. Start Switch Console and start or connect to a Switch server (on your local Docker backend or an onboarded remote host). Ensure a messaging bridge and a signed-in provider are available. Follow the official quickstart for your installed Console version.
 2. In Console, open **Templates → Import template**. Choose or paste [`commitment-lab.template.yaml`](commitment-lab.template.yaml), save it to the workspace, then select **Use**.
 3. Choose a lowercase name prefix, the messaging bridge, and, under advanced settings if necessary, the provider, location and working directories. Run the template. It requests two agents and a room; the kickoff asks the stakeholder to begin.
 4. Add the mentor to the actual room/channel using your Switch and chat-app controls. The template cannot add a mentor whose identity it does not know. If no second person is available, explicitly label the mentor messages as role-played.
 5. Confirm the agents are online and addressable. The template uses `addressing: anyone` so room members and the other agent can address them; use it only in a room whose participants you trust. This setting is not a general guarantee of private data isolation or enforced approvals.
 
-Switch's examples indicate that an agent usually responds when explicitly addressed; a normal room message supplies context but does not necessarily wake it. Use the created names rather than generic role labels, and check the agent's session if it does not respond. Agent and channel behavior depends on the installed Switch version and bridge.
+Switch's examples indicate that an agent usually responds when explicitly addressed; a normal room message supplies context but does not necessarily wake it. Use the created names rather than generic role labels, and check the agent's session if it does not respond. Agents starting late need to read earlier messages from the room, which is why the instructions ask them to use `read_context` and handle truncated history. Agent and channel behavior depends on the installed Switch version and bridge.
 
 ## Run a round
 
@@ -46,7 +46,7 @@ Do not post real customer information or production credentials in this fictiona
 
 ## Verify that the mentor matters
 
-Start a clearly marked **new round**, or create a fresh room for the cleanest comparison. Repeat the conversation with a different mentor constraint: neither CSV nor the integration can be delivered before May 22. Address the stakeholder after the new constraint and the coach after the new proposal.
+Start a clearly marked **new round**, or create a fresh room for the cleanest comparison. If running the template again, choose a different prefix so its new agent and room names do not collide; address those new names in the second round. Repeat the conversation with a different mentor constraint: neither CSV nor the integration can be delivered before May 22. Address the stakeholder after the new constraint and the coach after the new proposal.
 
 Check that the stakeholder acknowledges the new constraint, the plan and debrief reflect the current round, and unconfirmed customer acceptance stays unresolved. Try a round with no mentor response: the coach should say the input is missing, rather than inventing it. Model behavior can vary, so review each result; this is a manual acceptance check, not an automated guarantee.
 

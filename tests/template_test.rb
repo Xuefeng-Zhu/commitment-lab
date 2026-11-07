@@ -22,7 +22,9 @@ class TemplateTest < Minitest::Test
     stakeholder, coach = agents.map { |agent| agent.fetch('instructions') }
     assert_includes stakeholder, 'human mentor'
     assert_includes stakeholder, 'customer has not confirmed'
+    assert_includes stakeholder, 'read_context'
     assert_includes coach, 'messages actually present'
+    assert_includes coach, 'read_context'
     assert_includes coach, 'not stated'
   end
 

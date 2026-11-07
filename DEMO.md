@@ -20,7 +20,7 @@ The response to an agent must address it by the name created by the template. A 
 
 ## Round B: no Friday option
 
-For the cleanest comparison, create a new room from the template. Alternatively, explicitly mark a new round and verify that the agents do not carry the prior round's constraint forward.
+For the cleanest comparison, create a new room from the template using a different prefix, such as `commitment-b`, and address the newly created agent names. A repeated template run with the same prefix would collide with the existing agent names. Alternatively, explicitly mark a new round and verify that the agents do not carry the prior round's constraint forward.
 
 Repeat the scenario, but have the mentor independently give a different constraint: `Mentor: Neither CSV nor the full integration is available before May 22.` The learner asks the stakeholder to react and proposes a new plan, then requests a coach debrief.
 
