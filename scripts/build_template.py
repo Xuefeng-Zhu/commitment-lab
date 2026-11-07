@@ -69,6 +69,8 @@ room:
   name: "{{team}}-lab"
   description: Fictional launch-commitment practice with a learner, a human mentor and two agents
   channel_type: channel_private
+  read_visibility: private
+  write_visibility: private
   instructions: |
     This is a fictional training exercise. The room creator is the learner,
     and a human mentor plays engineering. The stakeholder plays Sales and

@@ -12,6 +12,8 @@ class TemplateTest < Minitest::Test
     assert_equal agents.map { |agent| agent.fetch('name') }, TEMPLATE.fetch('room').fetch('agents')
     assert_equal ['{$creator}'], TEMPLATE.fetch('room').fetch('users')
     assert_equal 'channel_private', TEMPLATE.fetch('room').fetch('channel_type')
+    assert_equal 'private', TEMPLATE.fetch('room').fetch('read_visibility')
+    assert_equal 'private', TEMPLATE.fetch('room').fetch('write_visibility')
     agents.each do |agent|
       assert_equal 'anyone', agent.fetch('addressing')
       %w[provider location directory instructions].each { |key| refute_empty agent.fetch(key) }
