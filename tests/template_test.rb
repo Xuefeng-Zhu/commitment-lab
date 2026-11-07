@@ -20,6 +20,9 @@ class TemplateTest < Minitest::Test
       assert_equal '{directory}/{agent}', agent.fetch('directory')
     end
     assert_equal '{$agents_dir}', TEMPLATE.fetch('params').fetch('directory').fetch('default')
+    pattern = Regexp.new(TEMPLATE.fetch('params').fetch('team').fetch('pattern'))
+    assert_match pattern, 'commitment'
+    refute_match pattern, 'commitment-b'
   end
 
   def test_scenario_and_coach_instructions_are_embedded

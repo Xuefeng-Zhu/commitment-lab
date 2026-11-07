@@ -24,9 +24,9 @@ version: 1
 params:
   team:
     type: string
-    description: Short lowercase prefix for the room and agent names
+    description: Lowercase prefix, at most 10 characters, for Mattermost-compatible agent names
     default: commitment
-    pattern: "[a-z][a-z0-9-]*"
+    pattern: "^[a-z][a-z0-9-]{{0,9}}$"
   provider:
     type: provider
     description: Installed and authenticated coding agent used for both participants
