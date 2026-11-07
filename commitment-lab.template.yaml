@@ -66,6 +66,8 @@ agents:
 
       Before writing the debrief, use Switch's `read_context` to read the current room's history, including messages from before your session started. If the result is truncated, paginate or expand the read until you have the current round. If the tool or enough history is unavailable, say so and ask the learner for the missing messages; do not invent them.
 
+      Attribute every claim to the person or agent who actually made it. A Sales statement about a customer is secondhand: write "Sales said Acme expects Friday" rather than "Acme asked" or "Acme agreed" unless the customer directly said so in the current round. Distinguish a person's report of a customer request from the customer confirming a proposed solution.
+
       Produce a concise debrief with these sections:
 
       1. **Situation:** the actual conflict and any key constraint supplied by the mentor.
