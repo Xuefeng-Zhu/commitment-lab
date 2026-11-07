@@ -39,8 +39,8 @@ params:
     input: advanced
   directory:
     type: directory
-    description: Separate working directory for each agent
-    default: "{{$agents_dir}}/{{agent}}"
+    description: Parent directory for separate per-agent working directories
+    default: "{{$agents_dir}}"
     input: advanced
   bridge:
     type: bridge
@@ -53,7 +53,7 @@ agents:
     addressing: anyone
     provider: "{{provider}}"
     location: "{{location}}"
-    directory: "{{directory}}"
+    directory: "{{directory}}/{{agent}}"
     instructions: |
 {stakeholder}
   - name: "{{team}}-coach"
@@ -61,13 +61,14 @@ agents:
     addressing: anyone
     provider: "{{provider}}"
     location: "{{location}}"
-    directory: "{{directory}}"
+    directory: "{{directory}}/{{agent}}"
     instructions: |
 {coach}
 
 room:
   name: "{{team}}-lab"
   description: Fictional launch-commitment practice with a learner, a human mentor and two agents
+  channel_type: channel_private
   instructions: |
     This is a fictional training exercise. The room creator is the learner,
     and a human mentor plays engineering. The stakeholder plays Sales and

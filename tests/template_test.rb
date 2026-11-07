@@ -11,10 +11,13 @@ class TemplateTest < Minitest::Test
     assert_equal ['{team}-stakeholder', '{team}-coach'], agents.map { |agent| agent.fetch('name') }
     assert_equal agents.map { |agent| agent.fetch('name') }, TEMPLATE.fetch('room').fetch('agents')
     assert_equal ['{$creator}'], TEMPLATE.fetch('room').fetch('users')
+    assert_equal 'channel_private', TEMPLATE.fetch('room').fetch('channel_type')
     agents.each do |agent|
       assert_equal 'anyone', agent.fetch('addressing')
       %w[provider location directory instructions].each { |key| refute_empty agent.fetch(key) }
+      assert_equal '{directory}/{agent}', agent.fetch('directory')
     end
+    assert_equal '{$agents_dir}', TEMPLATE.fetch('params').fetch('directory').fetch('default')
   end
 
   def test_scenario_and_coach_instructions_are_embedded
